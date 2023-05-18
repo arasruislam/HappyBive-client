@@ -4,3 +4,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.custom-container{
+    @apply sm:max-w-xl md:max-w-2xl lg:max-w-screen-xl mx-auto
+}
+
+.active_Items {
+    @apply bg-transparent text-[#B1D22F] transition-colors duration-300 font-poppins font-semibold 
+}
+
+.default_Items {
+    @apply bg-transparent text-gray-600 transition-colors duration-300 font-poppins hover:text-gray-400
+}
+
+.accountBtn {
+    @apply bg-purple-500 hover:bg-[#B1D22F] transition-all duration-300 border-none
+}
