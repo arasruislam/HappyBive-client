@@ -16,7 +16,15 @@ const Home = () => {
       </section>
 
       {/* Shop by Categories */}
-      <section className="my-8">
+      <section className="my-12">
+        <div className="pb-8 text-center">
+          <h2 className="text-3xl font-bold mb-2">Shop By Category</h2>
+          <p className="text-gray-500">
+            HappyBive has a luxury Toys with a long history, and this website is
+            a tribute.
+          </p>
+        </div>
+        
         <Categories />
       </section>
     </div>
