@@ -19,7 +19,7 @@ const Categories = () => {
   //   console.log(categories);
 
   /* Specific Data Load By Category */
-  const url = `http://localhost:5000/subCategories?category=${categoryName}`;
+  const url = `https://happybive-server.vercel.app/subCategories?category=${categoryName}`;
 
   useEffect(() => {
     fetch(url)
