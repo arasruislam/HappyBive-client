@@ -3,20 +3,21 @@ import { FaCaretDown } from "react-icons/fa";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import CategoryCard from "./CategoryCard";
+import AllSubCategoriesData from "./AllSubCategoriesData";
 
 const Categories = () => {
+  const [allSubCategoriesData, setAllSubCategoriesData] = useState([]);
   const [subCategories, setSubCategories] = useState([]);
   const [categoryName, setCategoryName] = useState(null);
 
   /* Load All Categories Data */
-  //   useEffect(() => {
-  //     fetch("https://happybive-server.vercel.app/subCategories")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setCategories(data);
-  //       });
-  //   }, []);
-  //   console.log(categories);
+  useEffect(() => {
+    fetch("https://happybive-server.vercel.app/subCategories")
+      .then((res) => res.json())
+      .then((data) => {
+        setAllSubCategoriesData(data);
+      });
+  }, []);
 
   /* Specific Data Load By Category */
   const url = `https://happybive-server.vercel.app/subCategories?category=${categoryName}`;
@@ -46,7 +47,7 @@ const Categories = () => {
       <Tabs>
         <TabList className="border-none text-center space-x-8 mb-8">
           <Tab className="active-tab">
-            All Toys <FaCaretDown />
+            All <FaCaretDown />
           </Tab>
           <Tab
             onClick={scienceTabHandler}
@@ -71,9 +72,19 @@ const Categories = () => {
           </Tab>
         </TabList>
 
+        {/* All Sub Categories Card */}
         <TabPanel>
-          <h2>Any content 1</h2>
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {allSubCategoriesData.map((categories) => (
+              <AllSubCategoriesData
+                key={categories._id}
+                categories={categories}
+              />
+            ))}
+          </div>
         </TabPanel>
+
+        {/* ScienceTab */}
         <TabPanel>
           <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {subCategories.map((category) => (
@@ -81,6 +92,8 @@ const Categories = () => {
             ))}
           </div>
         </TabPanel>
+
+        {/* Engineering Kits */}
         <TabPanel>
           <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {subCategories.map((category) => (
@@ -88,6 +101,8 @@ const Categories = () => {
             ))}
           </div>
         </TabPanel>
+
+        {/* Engineering Tools */}
         <TabPanel>
           <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {subCategories.map((category) => (
