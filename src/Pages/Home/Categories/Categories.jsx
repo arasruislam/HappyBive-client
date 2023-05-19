@@ -19,7 +19,7 @@ const Categories = () => {
   //   console.log(categories);
 
   /* Specific Data Load By Category */
-  const url = `https://happybive-server.vercel.app/subCategories?category=${categoryName}`;
+  const url = `http://localhost:5000/subCategories?category=${categoryName}`;
 
   useEffect(() => {
     fetch(url)
@@ -82,14 +82,14 @@ const Categories = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="space-y-4">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {subCategories.map((category) => (
               <CategoryCard key={category._id} category={category} />
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="space-y-4">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {subCategories.map((category) => (
               <CategoryCard key={category._id} category={category} />
             ))}

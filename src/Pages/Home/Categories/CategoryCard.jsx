@@ -10,6 +10,13 @@ const CategoryCard = ({ category }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{category?.toyName}</h2>
+        <p>
+          <Rating
+            className="max-w-[100px]"
+            value={category?.ratings}
+            readOnly
+          />
+        </p>
         <p className="text-lg text-red-500 font-bold">${category?.price}</p>
         <div className="card-actions justify-end">
           <button className="btn custom-btn2">View Details</button>
