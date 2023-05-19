@@ -7,7 +7,7 @@ import { FaLocationArrow } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="bg-gray-700">
-      <footer className="footer footer-center lg:footer py-10 custom-container text-white">
+      <footer className="footer footer-center lg:footer py-10 px-2 custom-container text-white">
         <div>
           {/* Logo */}
           <Link to="/">

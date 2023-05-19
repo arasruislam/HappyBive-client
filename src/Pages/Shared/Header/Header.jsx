@@ -108,7 +108,7 @@ const Header = () => {
           <div>
             <FaUser className="h-6 w-6 text-[#B1D22F]" />
           </div>
-          
+
           {/* login/ logout */}
           <div>
             <Link to="/login">

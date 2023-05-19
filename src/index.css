@@ -7,7 +7,7 @@
 
 
 .custom-container{
-    @apply sm:max-w-xl md:max-w-2xl lg:max-w-screen-xl mx-auto px-4
+    @apply sm:max-w-xl md:max-w-2xl lg:max-w-screen-xl mx-auto
 }
 
 .active_Items {

@@ -2,10 +2,10 @@ import { FaRegPlayCircle } from "react-icons/fa";
 import banner from "../../../assets/banner.jpg";
 const Banner = () => {
   return (
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 place-items-center">
-          {/* mobile banner img */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 place-items-center">
+      {/* mobile banner img */}
       <div className="flex lg:hidden">
-        <img src={banner} alt="" />
+        <img src={banner} alt="banner image" />
       </div>
       {/* banner text */}
       <div className="space-y-8">
@@ -24,11 +24,11 @@ const Banner = () => {
         <button className="btn btn-md custom-btn text-lg">
           <FaRegPlayCircle className="h-6 w-6 mr-2" /> Watch
         </button>
-          </div>
-          
-          {/* Desktop banner img */}
+      </div>
+
+      {/* Desktop banner img */}
       <div className="hidden lg:block">
-        <img src={banner} alt="" />
+        <img src={banner} alt="banner image" />
       </div>
     </div>
   );

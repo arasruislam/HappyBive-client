@@ -4,7 +4,7 @@ import Main from "../Layouts/Main";
 import Blog from "../Pages/Blog/Blog";
 import Error from "../Pages/Error/Error";
 import Login from "../Pages/Accounts/Login/Login";
-import Logout from "../Pages/Accounts/Logout/Logout";
+import Registration from "../Pages/Accounts/Registration/Registration";
 
 const router = createBrowserRouter([
   {
@@ -25,8 +25,8 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/logout",
-        element: <Logout />,
+        path: "/registration",
+        element: <Registration />,
       },
     ],
   },

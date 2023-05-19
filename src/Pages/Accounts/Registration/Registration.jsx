@@ -1,25 +1,36 @@
 import { Link } from "react-router-dom";
-import loginImg from "../../../assets/login.png";
+import registerImg from "../../../assets/logout.png";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 
-const Login = () => {
+const Registration = () => {
   return (
     <div className="hero py-8">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
-          <img src={loginImg} alt="Login Image" className="h-[400px]" />
+          <img src={registerImg} alt="Login Image" className="h-[400px]" />
         </div>
         {/* Form */}
         <div className="card w-full max-w-sm shadow-2xl">
           <form className="card-body">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="name"
+                name="name"
+                placeholder="Your Name"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">E-mail</span>
               </label>
               <input
                 type="email"
                 name="email"
-                placeholder="email"
+                placeholder="Your Email"
                 className="input input-bordered"
               />
             </div>
@@ -30,7 +41,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                placeholder="password"
+                placeholder="Enter Password"
                 className="input input-bordered"
               />
               <label className="label">
@@ -40,17 +51,19 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-[#B1D22F] accountLogin">Login</button>
+              <button className="btn bg-[#B1D22F] accountLogin">
+                Register Now
+              </button>
             </div>
 
             {/* don't have an account */}
             <div className="mt-2 text-gray-500">
-              Don't have an account!{" "}
+              Already have an account!{" "}
               <Link
-                to="/registration"
+                to="/login"
                 className="hover:text-green-500 hover:underline font-semibold "
               >
-                Register Now
+                Login
               </Link>
             </div>
 
@@ -76,4 +89,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registration;
