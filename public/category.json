@@ -1,0 +1,65 @@
+[
+  {
+    "category": "Engineering Kits",
+    "toyName": "RoboBuilder 5720T",
+    "price": 149.99,
+    "ratings": 4.5,
+    "img": "https://i.ibb.co/XZB4wWn/toy1.png"
+  },
+  {
+    "category": "Engineering Kits",
+    "toyName": "Snap Circuits Pro SC-500",
+    "price": 79.99,
+    "ratings": 4.2,
+    "img": "https://i.ibb.co/0QrV1v8/toy2.png"
+  },
+  {
+    "category": "Engineering Kits",
+    "toyName": "LEGO Mindstorms EV3",
+    "price": 199.99,
+    "ratings": 4.7,
+    "img": "https://i.ibb.co/9TYVHMh/toy3.png"
+  },
+  {
+    "category": "Engineering Tools",
+    "toyName": "Digital Multimeter",
+    "price": 29.99,
+    "ratings": 4.5,
+    "img": "https://i.ibb.co/NVmY6XW/toy4.png"
+  },
+  {
+    "category": "Engineering Tools",
+    "toyName": "Soldering Iron Kit",
+    "price": 39.99,
+    "ratings": 4.2,
+    "img": "https://i.ibb.co/VBdFBPp/toy5.png"
+  },
+  {
+    "category": "Engineering Tools",
+    "toyName": "Precision Screwdriver Set",
+    "price": 19.99,
+    "ratings": 4.7,
+    "img": "https://i.ibb.co/RY733Y6/toy6.png"
+  },
+  {
+    "category": "Science Tab",
+    "toyName": "Interactive Chemistry Tablet",
+    "price": 59.99,
+    "ratings": 4.5,
+    "img": "https://i.ibb.co/vkN28pG/toy7.png"
+  },
+  {
+    "category": "Science Tab",
+    "toyName": "Astronomy Learning Pad",
+    "price": 39.99,
+    "ratings": 4.2,
+    "img": "https://i.ibb.co/SdhMgVk/toy8.png"
+  },
+  {
+    "category": "Science Tab",
+    "toyName": "Biology Discovery Tablet",
+    "price": 49.99,
+    "ratings": 4.7,
+    "img": "https://i.ibb.co/CKXywW2/toy9.png"
+  }
+]

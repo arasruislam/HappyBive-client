@@ -1,5 +1,6 @@
 import Slider from "../../Shared/Slider/Slider";
 import Banner from "../Banner/Banner";
+import Categories from "../Categories/Categories";
 
 const Home = () => {
   return (
@@ -12,6 +13,11 @@ const Home = () => {
       {/* Sponsor Slide */}
       <section className="py-12 mx-auto">
         <Slider />
+      </section>
+
+      {/* Shop by Categories */}
+      <section className="my-8">
+        <Categories />
       </section>
     </div>
   );
