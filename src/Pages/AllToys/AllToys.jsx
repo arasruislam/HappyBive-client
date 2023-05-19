@@ -1,37 +1,43 @@
+import { useEffect, useState } from "react";
+import ToyCard from "./ToyCard";
+
 const AllToys = () => {
+  const [toys, setToys] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/toys")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
+    console.log(toys);
+
   return (
-    <div className="custom-container pt-16">
+    <div className="custom-container py-16">
+      <div className="my-4">
+        <h2 className="text-lg">
+          Total Available Toys:{" "}
+          <span className="text-[#FF6667] font-bold">{toys.length}</span>
+        </h2>
+      </div>
+
       <div className="overflow-x-auto">
         <table className="table w-full">
           {/* head*/}
           <thead>
             <tr>
-              <th></th>
-              <th className="capitalize">Toy Name</th>
-              <th>Sub Category</th>
-              <th>Seller</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Action</th>
+              <th className="bg-[#B1D22F]"></th>
+              <th className="capitalize bg-[#B1D22F]">Toy Name</th>
+              <th className="capitalize bg-[#B1D22F]">Sub Category</th>
+              <th className="capitalize bg-[#B1D22F]">Seller</th>
+              <th className="capitalize bg-[#B1D22F]">Price</th>
+              <th className="capitalize bg-[#B1D22F]">Quantity</th>
+              <th className="capitalize bg-[#B1D22F]">Details</th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            <tr className="hover">
-              <th>1</th>
-              {/* Toy Name */}
-              <td>Cy Ganderton</td>
-              {/* Sub Category */}
-              <td>Quality Control Specialist</td>
-              {/* Seller name if available */}
-              <td>Blue</td>
-              {/* Price */}
-              <td>Blue</td>
-              {/* Quantity */}
-              <td>Blue</td>
-              {/* Active */}
-              <td>Blue</td>
-            </tr>
+            {toys.map((toy, i) => (
+              <ToyCard key={toy._id} index={i + 1} toy={toy} />
+            ))}
           </tbody>
         </table>
       </div>

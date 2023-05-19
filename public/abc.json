@@ -1,0 +1,56 @@
+[
+  {
+    "toyName": "Chemistry Set",
+    "subCategory": "ScienceTab",
+    "img": "https://i.ibb.co/1Zbcqpv/toy8.png",
+    "price": 29.99,
+    "quantity": 10,
+    "ratings": 4.5,
+    "description": "Explore the fascinating world of chemistry with this comprehensive chemistry set. Includes various chemicals, test tubes, and equipment for conducting exciting experiments.Includes various chemicals, test tubes, and equipment for conducting exciting experiments.Includes various chemicals, test tubes, and equipment for conducting exciting experiments.Includes various chemicals, test tubes, and equipment for conducting exciting experiments.Includes various chemicals, test tubes, and equipment for conducting exciting experiments."
+  },
+  {
+    "toyName": "Microscope Kit",
+    "subCategory": "ScienceTab",
+    "img": "https://i.ibb.co/VBLBkdR/toy6.png",
+    "price": 49.99,
+    "quantity": 5,
+    "ratings": 4.8,
+    "description": "Unleash your curiosity and dive into the microscopic world with this advanced microscope kit. Comes with prepared slides, a sturdy microscope, and a comprehensive instruction manual.Comes with prepared slides, a sturdy microscope, and a comprehensive instruction manual.Comes with prepared slides, a sturdy microscope, and a comprehensive instruction manual.Comes with prepared slides, a sturdy microscope, and a comprehensive instruction manual.Comes with prepared slides, a sturdy microscope, and a comprehensive instruction manual.Comes with prepared slides, a sturdy microscope, and a comprehensive instruction manual."
+  },
+  {
+    "toyName": "Robotics Kit",
+    "subCategory": "EngineeringKits",
+    "img": "https://i.ibb.co/4RCgp7Q/toy5.png",
+    "price": 69.99,
+    "quantity": 3,
+    "ratings": 4.6,
+    "description": "Learn the basics of robotics and coding with this interactive robotics kit. Build and program your own robot with the included components and step-by-step instructions.Build and program your own robot with the included components and step-by-step instructions.Build and program your own robot with the included components and step-by-step instructions.Build and program your own robot with the included components and step-by-step instructions.Build and program your own robot with the included components and step-by-step instructions.Build and program your own robot with the included components and step-by-step instructions."
+  },
+  {
+    "toyName": "Electronics Starter Kit",
+    "subCategory": "EngineeringKits",
+    "img": "https://i.ibb.co/35Z3JC7/toy3.png",
+    "price": 39.99,
+    "quantity": 8,
+    "ratings": 4.3,
+    "description": "Get started with electronics and circuitry using this beginner-friendly kit. Includes a variety of electronic components and a detailed guide for creating exciting projects.Includes a variety of electronic components and a detailed guide for creating exciting projects.Includes a variety of electronic components and a detailed guide for creating exciting projects.Includes a variety of electronic components and a detailed guide for creating exciting projects.Includes a variety of electronic components and a detailed guide for creating exciting projects.Includes a variety of electronic components and a detailed guide for creating exciting projects."
+  },
+  {
+    "toyName": "Tool Set",
+    "subCategory": "EngineeringTools",
+    "img": "https://i.ibb.co/TP6Xwjg/toy9.png",
+    "prce": 19.99,
+    "quantity": 15,
+    "ratings": 4.2,
+    "description": "Equip yourself with this essential tool set for various engineering tasks. Features a range of high-quality tools including screwdrivers, pliers, and wrenches.Features a range of high-quality tools including screwdrivers, pliers, and wrenches.Features a range of high-quality tools including screwdrivers, pliers, and wrenches.Features a range of high-quality tools including screwdrivers, pliers, and wrenches.Features a range of high-quality tools including screwdrivers, pliers, and wrenches.Features a range of high-quality tools including screwdrivers, pliers, and wrenches."
+  },
+  {
+    "toyName": "Soldering Iron Kit",
+    "subCategory": "EngineeringTools",
+    "img": "https://i.ibb.co/xgSBdf8/toy7.png",
+    "price": 24.99,
+    "quantity": 6,
+    "ratings": 4.7,
+    "description": "Master the art of soldering with this complete soldering iron kit. Includes a soldering iron, solder wire, and other accessories for precise soldering work.Includes a soldering iron, solder wire, and other accessories for precise soldering work.Includes a soldering iron, solder wire, and other accessories for precise soldering work.Includes a soldering iron, solder wire, and other accessories for precise soldering work.Includes a soldering iron, solder wire, and other accessories for precise soldering work.Includes a soldering iron, solder wire, and other accessories for precise soldering work."
+  }
+]
