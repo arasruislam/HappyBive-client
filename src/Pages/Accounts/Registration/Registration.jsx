@@ -3,25 +3,35 @@ import registerImg from "../../../assets/logout.png";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import app from "../../../firebase/firebase.config";
+import { getAuth, updateProfile } from "firebase/auth";
+const auth = getAuth(app);
 
 const Registration = () => {
-  const {registerUser} = useContext(AuthContext);
+  const { registerUser } = useContext(AuthContext);
 
+  /* Registration Form */
   const registerUserHandler = (e) => {
     e.preventDefault();
 
     const form = e.target;
     const name = form.name.value;
+    const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    const newUser = { name, email, password };
-
+    const newUser = { name, photoURL, email, password };
     console.log(newUser);
 
     /* Register function */
     registerUser(email, password)
       .then((result) => {
         const user = result.user;
+        updateProfile(auth.currentUser, {
+          photoURL: photoURL,
+        })
+          .then()
+          .catch((error) => console.log(error));
+
         console.log(user);
       })
       .catch((error) => console.log(error));
@@ -42,6 +52,17 @@ const Registration = () => {
               <input
                 type="name"
                 name="name"
+                placeholder="Your Name"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">photoURL</span>
+              </label>
+              <input
+                type="url"
+                name="photoURL"
                 placeholder="Your Name"
                 className="input input-bordered"
               />

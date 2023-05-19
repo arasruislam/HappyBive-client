@@ -1,17 +1,38 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import loginImg from "../../../assets/login.png";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Login = () => {
+  const { loginUser, googleSignIn } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location);
+
+  /* Login User Form */
   const loginUserHandler = (e) => {
     e.preventDefault();
 
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const loginUser = { email, password };
-    console.log(loginUser);
-  }
+    const loggedUser = { email, password };
+    console.log(loggedUser);
+
+    /* Login User function */
+    loginUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => console.log(error));
+  };
+  /* Google Sign in */
+  const googleSignInHnadler = () => {
+    googleSignIn()
+      .then()
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="hero py-8">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -67,7 +88,7 @@ const Login = () => {
             <div>
               <div className="divider">OR</div>
               <div className="flex gap-4 justify-center">
-                <button>
+                <button onClick={googleSignInHnadler}>
                   <FaFacebook className="h-6 w-6" />
                 </button>
                 <button>

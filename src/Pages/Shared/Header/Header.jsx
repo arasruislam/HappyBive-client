@@ -1,8 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { FaUser } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Header = () => {
+  const { user, logout, loading } = useContext(AuthContext);
+
+  if (loading) {
+    return <div>loading</div>;
+  }
+
+  /* Logout handler */
+  const loggedOutHandler = () => {
+    logout()
+      .then()
+      .catch((error) => console.log(error));
+  };
+
+  /* Nav Items */
   const navItems = (
     <>
       <li>
@@ -99,29 +115,45 @@ const Header = () => {
         </div>
         <div className="navbar-end space-x-2">
           {/* User Profile */}
-          {/* <div className="avatar">
-            <div className="w-24 mask mask-hexagon">
-              <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-            </div>
-          </div> */}
-          {/* If User profile not available */}
-          <div>
-            <FaUser className="h-6 w-6 text-[#B1D22F]" />
-          </div>
+          {user?.photoURL ? (
+            <>
+              <div className="avatar">
+                <div className="w-8 mask mask-hexagon">
+                  <img src={user?.photoURL} />
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div>
+                <FaUser className="h-6 w-6 text-[#B1D22F]" />
+              </div>
+            </>
+          )}
 
           {/* login/ logout */}
-          <div>
-            <Link to="/login">
-              <button className="btn btn-sm bg-[#B1D22F] accountLogin">
-                Log in
-              </button>
-            </Link>
-          </div>
-          <div>
-            <button className="btn btn-sm bg-[#FF6667] accountLogout">
-              Log out
-            </button>
-          </div>
+          {user ? (
+            <>
+              <div>
+                <button
+                  onClick={loggedOutHandler}
+                  className="btn btn-sm bg-[#FF6667] accountLogout"
+                >
+                  Log out
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div>
+                <Link to="/login">
+                  <button className="btn btn-sm bg-[#B1D22F] accountLogin">
+                    Log in
+                  </button>
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
