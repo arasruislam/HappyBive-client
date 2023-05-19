@@ -24,7 +24,7 @@ const Home = () => {
             a tribute.
           </p>
         </div>
-        
+        {/* category */}
         <Categories />
       </section>
     </div>
