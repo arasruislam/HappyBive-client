@@ -1,8 +1,31 @@
 import { Link } from "react-router-dom";
 import registerImg from "../../../assets/logout.png";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Registration = () => {
+  const {registerUser} = useContext(AuthContext);
+
+  const registerUserHandler = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const newUser = { name, email, password };
+
+    console.log(newUser);
+
+    /* Register function */
+    registerUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="hero py-8">
       <div className="hero-content flex-col lg:flex-row">
@@ -11,7 +34,7 @@ const Registration = () => {
         </div>
         {/* Form */}
         <div className="card w-full max-w-sm shadow-2xl">
-          <form className="card-body">
+          <form onSubmit={registerUserHandler} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -57,7 +80,7 @@ const Registration = () => {
             </div>
 
             {/* don't have an account */}
-            <div className="mt-2 text-gray-500">
+            <div className="mt-2 text-gray-500 text-sm">
               Already have an account!{" "}
               <Link
                 to="/login"

@@ -3,6 +3,15 @@ import loginImg from "../../../assets/login.png";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
+  const loginUserHandler = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const loginUser = { email, password };
+    console.log(loginUser);
+  }
   return (
     <div className="hero py-8">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -11,7 +20,7 @@ const Login = () => {
         </div>
         {/* Form */}
         <div className="card w-full max-w-sm shadow-2xl">
-          <form className="card-body">
+          <form onSubmit={loginUserHandler} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -44,8 +53,8 @@ const Login = () => {
             </div>
 
             {/* don't have an account */}
-            <div className="mt-2 text-gray-500">
-              Don't have an account!{" "}
+            <div className="mt-2 text-gray-500 text-sm">
+              Do not have an account!{" "}
               <Link
                 to="/registration"
                 className="hover:text-green-500 hover:underline font-semibold "
