@@ -44,7 +44,7 @@ const Categories = () => {
   return (
     <>
       <Tabs>
-        <TabList className="border-none text-center space-x-8">
+        <TabList className="border-none text-center space-x-8 mb-8">
           <Tab className="active-tab">
             All Toys <FaCaretDown />
           </Tab>
@@ -75,19 +75,25 @@ const Categories = () => {
           <h2>Any content 1</h2>
         </TabPanel>
         <TabPanel>
-          {subCategories.map((category) => (
-            <CategoryCard key={category._id} category={category} />
-          ))}
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {subCategories.map((category) => (
+              <CategoryCard key={category._id} category={category} />
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          {subCategories.map((category) => (
-            <CategoryCard key={category._id} category={category} />
-          ))}
+          <div className="space-y-4">
+            {subCategories.map((category) => (
+              <CategoryCard key={category._id} category={category} />
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          {subCategories.map((category) => (
-            <CategoryCard key={category._id} category={category} />
-          ))}
+          <div className="space-y-4">
+            {subCategories.map((category) => (
+              <CategoryCard key={category._id} category={category} />
+            ))}
+          </div>
         </TabPanel>
       </Tabs>
     </>

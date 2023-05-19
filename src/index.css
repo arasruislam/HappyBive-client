@@ -29,6 +29,10 @@
     @apply bg-[#B1D22F] transition-all duration-300 border-none text-white hover:bg-[#FF6667]
 }
 
+.custom-btn2 {
+    @apply bg-[#FF6667] transition-all duration-300 border-none text-white hover:bg-[#B1D22F]
+}
+
 .active-tab {
     @apply capitalize cursor-pointer font-semibold border-2 btn btn-sm btn-outline border-[#FF6667] hover:bg-[#B1D22F] hover:border-[#B1D22F] text-[#FF6667]
 }
