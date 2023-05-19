@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <>
       <Header />
-      <div className="min-h-[calc(100vh-341px)] mt-16">
+      <div className="min-h-[calc(100vh-341px)] mt-16 font-poppins">
         <Outlet />
       </div>
       <Footer />

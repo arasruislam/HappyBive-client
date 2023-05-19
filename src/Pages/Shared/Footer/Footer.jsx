@@ -13,7 +13,7 @@ const Footer = () => {
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
-          <p className="lg:mt-4 text-start">
+          <p className="lg:mt-4 lg:text-start">
             <strong>HappyBive</strong> Industries Ltd.
             <br />
             Providing reliable toy sells since 1992

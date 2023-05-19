@@ -7,7 +7,7 @@
 
 
 .custom-container{
-    @apply sm:max-w-xl md:max-w-2xl lg:max-w-screen-xl mx-auto
+    @apply sm:max-w-xl md:max-w-2xl lg:max-w-screen-xl mx-auto px-4
 }
 
 .active_Items {
@@ -18,6 +18,13 @@
     @apply bg-transparent text-gray-600 transition-colors duration-300 font-poppins hover:text-gray-400
 }
 
-.accountBtn {
-    @apply bg-purple-500 hover:bg-[#B1D22F] transition-all duration-300 border-none
+.accountLogout {
+    @apply hover:bg-[#B1D22F] transition-all duration-300 border-none capitalize
+}
+.accountLogin {
+    @apply hover:bg-[#FF6667] transition-all duration-300 border-none capitalize
+}
+
+.custom-btn {
+    @apply bg-[#B1D22F] transition-all duration-300 border-none text-white hover:bg-[#FF6667]
 }

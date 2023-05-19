@@ -108,9 +108,19 @@ const Header = () => {
           <div>
             <FaUser className="h-6 w-6 text-[#B1D22F]" />
           </div>
+          
           {/* login/ logout */}
           <div>
-            <button className="btn btn-sm accountBtn">Log in</button>
+            <Link to="/login">
+              <button className="btn btn-sm bg-[#B1D22F] accountLogin">
+                Log in
+              </button>
+            </Link>
+          </div>
+          <div>
+            <button className="btn btn-sm bg-[#FF6667] accountLogout">
+              Log out
+            </button>
           </div>
         </div>
       </div>
