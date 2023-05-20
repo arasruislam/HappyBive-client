@@ -17,7 +17,7 @@ const ToyCard = ({ toy, index }) => {
       <td>{toy?.quantity}</td>
       {/* Active */}
       <td>
-        <Link>
+        <Link to={`/allToys/${toy._id}`}>
           <FaShareSquare className="h-6 w-6 text-[#FF6667]" />
         </Link>
       </td>
