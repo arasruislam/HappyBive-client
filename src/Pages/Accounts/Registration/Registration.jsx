@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import registerImg from "../../../assets/logout.png";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import app from "../../../firebase/firebase.config";
 import { getAuth, updateProfile } from "firebase/auth";
@@ -9,6 +9,7 @@ const auth = getAuth(app);
 
 const Registration = () => {
   const { registerUser } = useContext(AuthContext);
+  const [error, setError] = useState('')
 
   /* Registration Form */
   const registerUserHandler = (e) => {
@@ -21,6 +22,13 @@ const Registration = () => {
     const password = form.password.value;
     const newUser = { name, photoURL, email, password };
     console.log(newUser);
+
+    /* Password Verification */
+    if (password.length < 8) {
+      setError("Password must be at least 8 character");
+      return;
+    }
+    if(!/()/)
 
     /* Register function */
     registerUser(email, password)
