@@ -1,7 +1,7 @@
 import { HiOutlinePencilSquare, HiXMark } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
-const MyToyList = ({ toy, index }) => {
+const MyToyList = ({ toy, index, deleteToyHandler }) => {
   return (
     <tr className="hover">
       <th>{index}</th>
@@ -23,7 +23,10 @@ const MyToyList = ({ toy, index }) => {
           </button>
         </Link>
         <Link>
-          <button className="toysListBtn">
+          <button
+            onClick={() => deleteToyHandler(toy._id)}
+            className="toysListBtn"
+          >
             <HiXMark className="h-6 w-6 text-[#FF6667]" />
           </button>
         </Link>
