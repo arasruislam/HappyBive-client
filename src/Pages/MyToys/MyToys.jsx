@@ -35,8 +35,8 @@ const MyToys = () => {
     <div className="custom-container py-8">
       <div className="my-4">
         <h2 className="text-lg">
-          Total Available Toys:{" "}
-          {/* <span className="text-[#FF6667] font-bold">{toys.length}</span> */}
+          Total Toys:{" "}
+          <span className="text-[#FF6667] font-bold">{myToys.length}</span>
         </h2>
       </div>
 

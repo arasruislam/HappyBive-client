@@ -1,8 +1,16 @@
+import { useContext } from "react";
 import Slider from "../../Shared/Slider/Slider";
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Loading from "../../Loading/Loading";
 
 const Home = () => {
+  const { loading } = useContext(AuthContext);
+  if (loading) {
+    return <Loading />;
+  }
+  
   return (
     <div className="custom-container px-4">
       {/* banner Section */}
