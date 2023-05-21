@@ -39,3 +39,7 @@
 .default-tab {
     @apply capitalize btn btn-sm bg-[#B1D22F] border-2 border-[#B1D22F] hover:bg-[#FF6667] hover:border-[#FF6667]
 }
+
+.toysListBtn {
+    @apply bg-white shadow p-2 rounded-lg hover:scale-110 transition-all duration-300
+}

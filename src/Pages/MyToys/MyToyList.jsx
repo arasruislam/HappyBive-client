@@ -1,8 +1,7 @@
-import { FaShareSquare } from "react-icons/fa";
+import { HiOutlinePencilSquare, HiXMark } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
-const ToyCard = ({ toy, index }) => {
-  console.log(toy);
+const MyToyList = ({ toy, index }) => {
   return (
     <tr className="hover">
       <th>{index}</th>
@@ -17,13 +16,20 @@ const ToyCard = ({ toy, index }) => {
       {/* Quantity */}
       <td>{toy?.quantity}</td>
       {/* Active */}
-      <td>
-        <Link to={`/allToys/${toy._id}`}>
-          <FaShareSquare className="h-6 w-6 text-[#FF6667]" />
+      <td className="space-x-2">
+        <Link>
+          <button className="toysListBtn">
+            <HiOutlinePencilSquare className="h-6 w-6 text-[#FF6667]" />
+          </button>
+        </Link>
+        <Link>
+          <button className="toysListBtn">
+            <HiXMark className="h-6 w-6 text-[#FF6667]" />
+          </button>
         </Link>
       </td>
     </tr>
   );
 };
 
-export default ToyCard;
+export default MyToyList;

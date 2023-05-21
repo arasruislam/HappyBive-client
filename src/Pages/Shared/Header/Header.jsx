@@ -5,11 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Header = () => {
-  const { user, logout, loading } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
-  if (loading) {
-    return <div>loading</div>;
-  }
 
   /* Logout handler */
   const loggedOutHandler = () => {
@@ -41,16 +38,20 @@ const Header = () => {
           All Toys
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/myToys"
-          className={({ isActive }) =>
-            isActive ? "active_Items" : "default_Items"
-          }
-        >
-          My Toys
-        </NavLink>
-      </li>
+      {user?.email ? (
+        <li>
+          <NavLink
+            to="/myToys"
+            className={({ isActive }) =>
+              isActive ? "active_Items" : "default_Items"
+            }
+          >
+            My Toys
+          </NavLink>
+        </li>
+      ) : (
+        <></>
+      )}
       <li>
         <NavLink
           to="/addToy"
