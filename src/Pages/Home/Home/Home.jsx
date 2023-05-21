@@ -16,7 +16,7 @@ const Home = () => {
       </section>
 
       {/* Shop by Categories */}
-      <section className="my-12">
+      <section className="my-12 bg-gray-50 px-4 py-8">
         <div className="pb-8 text-center">
           <h2 className="text-3xl font-bold mb-2">Shop By Category</h2>
           <p className="text-gray-500">

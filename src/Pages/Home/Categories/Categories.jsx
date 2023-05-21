@@ -74,7 +74,7 @@ const Categories = () => {
 
         {/* All Sub Categories Card */}
         <TabPanel>
-          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
             {allSubCategoriesData.map((categories) => (
               <AllSubCategoriesData
                 key={categories._id}
@@ -86,7 +86,7 @@ const Categories = () => {
 
         {/* ScienceTab */}
         <TabPanel>
-          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {subCategories.map((category) => (
               <CategoryCard key={category._id} category={category} />
             ))}
@@ -95,7 +95,7 @@ const Categories = () => {
 
         {/* Engineering Kits */}
         <TabPanel>
-          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {subCategories.map((category) => (
               <CategoryCard key={category._id} category={category} />
             ))}
@@ -104,7 +104,7 @@ const Categories = () => {
 
         {/* Engineering Tools */}
         <TabPanel>
-          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {subCategories.map((category) => (
               <CategoryCard key={category._id} category={category} />
             ))}
