@@ -5,6 +5,7 @@ import Categories from "../Categories/Categories";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Loading from "../../Loading/Loading";
 import Gallery from "../Gallery/Gallery";
+import Buyers from "../Buyers/Buyers";
 
 const Home = () => {
   const { loading } = useContext(AuthContext);
@@ -47,6 +48,18 @@ const Home = () => {
           </p>
         </div>
         <Gallery />
+      </section>
+
+      {/* Buyers */}
+      <section className="pt-16 pb-8 flex items-center justify-center flex-col">
+        <div className="pb-12 text-center">
+          <h2 className="text-3xl font-bold mb-2">Our Top Buyers</h2>
+          <p className="text-gray-500">
+            HappyBive has a luxury Toys with a long history, and this website is
+            a tribute.
+          </p>
+        </div>
+        <Buyers />
       </section>
     </div>
   );
