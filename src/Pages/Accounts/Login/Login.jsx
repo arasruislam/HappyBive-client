@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../../assets/login.png";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
@@ -7,6 +7,9 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 const Login = () => {
   const { loginUser, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from.pathname || "/";
+  console.log(from);
   console.log(location);
 
   /* Login User Form */
@@ -23,13 +26,14 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
   };
   /* Google Sign in */
-  const googleSignInHnadler = () => {
+  const googleSignInHandler = () => {
     googleSignIn()
-      .then()
+      .then(navigate(from, { replace: true }))
       .catch((error) => console.log(error));
   };
 
@@ -88,10 +92,10 @@ const Login = () => {
             <div>
               <div className="divider">OR</div>
               <div className="flex gap-4 justify-center">
-                <button onClick={googleSignInHnadler}>
+                <button>
                   <FaFacebook className="h-6 w-6" />
                 </button>
-                <button>
+                <button onClick={googleSignInHandler}>
                   <FaGoogle className="h-6 w-6" />
                 </button>
                 <button>

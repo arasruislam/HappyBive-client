@@ -62,20 +62,20 @@ const ToyDetails = () => {
             </div>
             <div>
               <h2 className="text-gray-300 text-sm">
-                {user?.displayName ? (
-                  <>{user.displayName}</>
+                {ToyDetails?.sellerName ? (
+                  <>{ToyDetails.sellerName}</>
                 ) : (
                   <>
-                    <span>No Info</span>
+                    <span>name not available</span>
                   </>
                 )}
               </h2>
               <h2 className="text-md text-gray-300">
-                {user?.email ? (
-                  <>{user.email}</>
+                {ToyDetails?.sellerEmail ? (
+                  <>{ToyDetails.sellerEmail}</>
                 ) : (
                   <>
-                    <span>Email not Available</span>
+                    <span>email not available</span>
                   </>
                 )}
               </h2>
