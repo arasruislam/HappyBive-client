@@ -20,7 +20,7 @@ const Categories = () => {
   }, []);
 
   /* Specific Data Load By Category */
-  const url = `http://localhost:5000/subCategories?category=${categoryName}`;
+  const url = `http://localhost:5000/subCategories?subCategory=${categoryName}`;
 
   useEffect(() => {
     fetch(url)
