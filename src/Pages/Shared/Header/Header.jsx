@@ -7,7 +7,6 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
 
-
   /* Logout handler */
   const loggedOutHandler = () => {
     logout()
@@ -119,8 +118,8 @@ const Header = () => {
           {user?.photoURL ? (
             <>
               <div className="avatar">
-                <div className="w-8 mask mask-hexagon">
-                  <img src={user?.photoURL} />
+                <div className="w-8 mask mask-hexagon cursor-pointer">
+                  <img src={user?.photoURL} title={user?.displayName} />
                 </div>
               </div>
             </>
