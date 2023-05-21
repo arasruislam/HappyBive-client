@@ -5,7 +5,7 @@ import "@smastrom/react-rating/style.css";
 
 const AllSubCategoriesData = ({ categories }) => {
   return (
-    <div className="card card-compact lg:w-96 max-w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact max-w-96 bg-base-100 shadow-xl">
       <figure>
         <img src={categories?.img} alt="Shoes" className="h-48 object-cover" />
       </figure>

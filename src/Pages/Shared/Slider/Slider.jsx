@@ -16,8 +16,113 @@ import { Pagination, Navigation, Autoplay } from "swiper";
 const Slider = () => {
   return (
     <>
+      {/* medium device */}
       <Swiper
+        className="hidden lg:flex"
         slidesPerView={5}
+        spaceBetween={30}
+        loop={true}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation, Autoplay]}
+      >
+        <SwiperSlide>
+          <img
+            src={img1}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img2}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img3}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img4}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img5}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img6}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img1}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img2}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img3}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img4}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img5}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={img6}
+            alt="Sponsor image"
+            className=" grayscale hover:grayscale-0"
+          />
+        </SwiperSlide>
+      </Swiper>
+
+      {/* mobile */}
+      <Swiper
+        className="flex lg:hidden"
+        slidesPerView={3}
         spaceBetween={30}
         loop={true}
         centeredSlides={true}

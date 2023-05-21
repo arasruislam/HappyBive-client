@@ -45,7 +45,7 @@ const Categories = () => {
   return (
     <>
       <Tabs>
-        <TabList className="border-none text-center space-x-8 mb-8">
+        <TabList className="border-none text-center flex justify-center flex-wrap gap-4 mb-8">
           <Tab className="active-tab">
             All <FaCaretDown />
           </Tab>
@@ -74,7 +74,7 @@ const Categories = () => {
 
         {/* All Sub Categories Card */}
         <TabPanel>
-          <div className="space-y-4 grid grid-cols-1 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
             {allSubCategoriesData.map((categories) => (
               <AllSubCategoriesData
                 key={categories._id}
