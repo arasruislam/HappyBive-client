@@ -4,7 +4,6 @@ import ToyCard from "./ToyCard";
 const AllToys = () => {
   const [toys, setToys] = useState([]);
   
-
   useEffect(() => {
     fetch("http://localhost:5000/toys")
       .then((res) => res.json())

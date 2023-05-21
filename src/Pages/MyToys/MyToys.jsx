@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToyList from "./MyToyList";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -16,19 +17,32 @@ const MyToys = () => {
   }, [url]);
 
   const deleteToyHandler = (_id) => {
-    fetch(`http://localhost:5000/toys/${_id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          const remaining = myToys.filter((toys) => toys._id !== _id);
-          setMyToys(remaining);
-        }
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toys/${_id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              const remaining = myToys.filter((toys) => toys._id !== _id);
+              setMyToys(remaining);
+              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+            }
+          });
+      }
+    });
   };
 
   return (

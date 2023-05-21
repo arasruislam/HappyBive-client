@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateToyDetails = () => {
   const loadedToy = useLoaderData();
@@ -29,19 +30,32 @@ const UpdateToyDetails = () => {
       quantity,
       description,
     };
-    console.log(updateToy);
 
-    fetch(`http://localhost:5000/toys/${loadedToy._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updateToy),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to update this!",
+      icon: "success",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Update Now!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/toys/${loadedToy._id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updateToy),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount > 0) {
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
   };
   return (
     <div className=" py-8 bg-gray-200">

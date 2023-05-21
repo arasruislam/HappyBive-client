@@ -2,7 +2,6 @@ import { FaShareSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const ToyCard = ({ toy, index }) => {
-  console.log(toy);
   return (
     <tr className="hover">
       <th>{index}</th>

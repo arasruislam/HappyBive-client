@@ -8,9 +8,8 @@ import { FaUser } from "react-icons/fa";
 
 const ToyDetails = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const ToyDetails = useLoaderData();
-  console.log(ToyDetails);
+  
   return (
     <div className="bg-gray-100">
       <div className="custom-container grid grid-cols-1 lg:grid-cols-2 py-12 px-2 lg:px-0 gap-4 lg:gap-0">
