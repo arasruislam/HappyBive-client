@@ -17,7 +17,7 @@ const MyToyList = ({ toy, index, deleteToyHandler }) => {
       <td>{toy?.quantity}</td>
       {/* Active */}
       <td className="space-x-2">
-        <Link>
+        <Link to={`/updateToyDetails/${toy._id}`}>
           <button className="toysListBtn">
             <HiOutlinePencilSquare className="h-6 w-6 text-[#FF6667]" />
           </button>
