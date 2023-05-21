@@ -7,7 +7,7 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 
-  const url = `http://localhost:5000/toys?sellerEmail=${user.email}&sort=1`;
+  const url = `https://happybive-server.vercel.app/toys?sellerEmail=${user.email}&sort=1`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -27,7 +27,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${_id}`, {
+        fetch(`https://happybive-server.vercel.app/toys/${_id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",

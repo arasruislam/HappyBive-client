@@ -12,7 +12,7 @@ const Categories = () => {
 
   /* Load All Categories Data */
   useEffect(() => {
-    fetch("http://localhost:5000/subCategories")
+    fetch("https://happybive-server.vercel.app/subCategories")
       .then((res) => res.json())
       .then((data) => {
         setAllSubCategoriesData(data);
@@ -20,7 +20,7 @@ const Categories = () => {
   }, []);
 
   /* Specific Data Load By Category */
-  const url = `http://localhost:5000/subCategories?subCategory=${categoryName}`;
+  const url = `https://happybive-server.vercel.app/subCategories?subCategory=${categoryName}`;
 
   useEffect(() => {
     fetch(url)

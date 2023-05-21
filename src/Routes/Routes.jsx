@@ -34,7 +34,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://happybive-server.vercel.app/toys/${params.id}`),
       },
       {
         path: "/addToy",
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
         path: "/updateToyDetails/:id",
         element: <UpdateToyDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://happybive-server.vercel.app/toys/${params.id}`),
       },
       {
         path: "/subCategories/:id",
@@ -78,7 +78,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/subCategories/${params.id}`),
+          fetch(
+            `https://happybive-server.vercel.app/subCategories/${params.id}`
+          ),
       },
     ],
   },

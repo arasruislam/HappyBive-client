@@ -41,7 +41,7 @@ const UpdateToyDetails = () => {
       confirmButtonText: "Yes, Update Now!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${loadedToy._id}`, {
+        fetch(`https://happybive-server.vercel.app/toys/${loadedToy._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

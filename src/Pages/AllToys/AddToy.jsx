@@ -31,7 +31,7 @@ const AddToy = () => {
       description,
     };
 
-    fetch("http://localhost:5000/toys", {
+    fetch("https://happybive-server.vercel.app/toys", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
