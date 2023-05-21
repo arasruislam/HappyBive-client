@@ -3,6 +3,7 @@ import loginImg from "../../../assets/login.png";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const { loginUser, googleSignIn } = useContext(AuthContext);
@@ -26,6 +27,7 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
+        toast.success("Login success");
         navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));

@@ -4,7 +4,6 @@ import errorImg from "../../../public/error.json";
 
 const Error = () => {
   const { error } = useRouteError();
-  console.log(error);
   return (
     <div className="flex h-screen items-center justify-center">
       <div className="flex items-center flex-col">

@@ -5,11 +5,12 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import app from "../../../firebase/firebase.config";
 import { getAuth, updateProfile } from "firebase/auth";
+import { toast } from "react-hot-toast";
 const auth = getAuth(app);
 
 const Registration = () => {
   const { registerUser } = useContext(AuthContext);
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
 
   /* Registration Form */
   const registerUserHandler = (e) => {
@@ -26,18 +27,28 @@ const Registration = () => {
     /* Password Verification */
     if (password.length < 8) {
       setError("Password must be at least 8 character");
+      toast.error("8 character password needed");
       return;
     }
-    if(!/()/)
-
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setError("at least one upper case letter");
+      toast.error("at least one upper case");
+      return;
+    }
+    if (!/(?=.*[@$!%*?&])/.test(password)) {
+      setError("at least one special character");
+      toast.error("at least one special character");
+      return;
+    }
     /* Register function */
     registerUser(email, password)
       .then((result) => {
         const user = result.user;
+        toast.success("Registration Successful")
         updateProfile(auth.currentUser, {
           photoURL: photoURL,
         })
-          .then()
+          .then(toast.success("profile update successfully"))
           .catch((error) => console.log(error));
 
         console.log(user);
@@ -53,6 +64,9 @@ const Registration = () => {
         {/* Form */}
         <div className="card w-full max-w-sm shadow-2xl">
           <form onSubmit={registerUserHandler} className="card-body">
+            {/* Error message */}
+            <p className="text-red-500">{error}</p>
+
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
