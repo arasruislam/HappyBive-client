@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAMRDB3ZAi3NyNprNTPW9idn7VBwZbQHzI",
-  authDomain: "happybive.firebaseapp.com",
-  projectId: "happybive",
-  storageBucket: "happybive.appspot.com",
-  messagingSenderId: "591831992941",
-  appId: "1:591831992941:web:9598e5cbdda2990de00d64",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
