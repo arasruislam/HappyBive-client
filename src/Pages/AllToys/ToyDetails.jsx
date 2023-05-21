@@ -20,7 +20,7 @@ const ToyDetails = () => {
           className="max-h-48 mx-auto"
         />
 
-        <h3 className="text-2xl font-semibold">{ToyDetails?.toyName}</h3>
+        <h3 className="text-2xl font-semibold pt-8">{ToyDetails?.toyName}</h3>
         <p>
           <Rating
             className="max-w-[150px]"
